@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function one(arr){
+            for(x = 0; x < arr.length; x++){
+                console.log("Name: ", arr[x].name, ", Cohort: ", arr[x].cohort);
+            }
+        }
+
+        one([
+        {name: 'Remy', cohort: 'Jan'},
+        {name: 'Genevieve', cohort: 'March'},
+        {name: 'Chuck', cohort: 'Jan'},
+        {name: 'Osmund', cohort: 'June'},
+        {name: 'Nikki', cohort: 'June'},
+        {name: 'Boris', cohort: 'June'}
+        ])
+
+        function two(arr){
+            console.log("Employees")
+            for(x = 0; x < arr.employees.length; x++){
+                console.log((x+1) + " - " + arr.employees[x].first_name + ", " + arr.employees[x].last_name + " " + (arr.employees[x].first_name.length + arr.employees[x].last_name.length));
+            }
+            console.log("Managers")
+            for(x = 0; x < arr.managers.length; x++){
+                console.log((x+1) + " - " + arr.managers[x].first_name + ", " + arr.managers[x].last_name + " " + (arr.managers[x].first_name.length + arr.managers[x].last_name.length));
+            }
+        }
+
+        var users = {
+            employees: [
+                {'first_name':  'Miguel', 'last_name' : 'Jones'},
+                {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+                {'first_name' : 'Nora', 'last_name' : 'Lu'},
+                {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+            ],
+            managers: [
+            {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+            {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+            ]
+        };
+        two(users)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

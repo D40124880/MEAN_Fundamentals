@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            $.get("https://api.github.com/users/D40124880", function(data){
+                my_user_name = data.login;
+                console.log("My username is: " + my_user_name);
+                $("#button").click(function(){
+                    $(".name").after("<h3>My username is: " + my_user_name + "</h3>");
+                })
+            })
+
+            $("#button").click(function(){
+                $.get("https://api.github.com/users/D40124880", displayName)
+                function displayName(data) {
+                    $("#button").after("<p>"+data.name+"</p>")
+                    console.log(data.name);
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <button id="button">Press Me</button>
+    <p class="name" style="display: none"></p>
+</body>
+</html>

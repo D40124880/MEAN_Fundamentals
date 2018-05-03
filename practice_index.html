@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var x = 10;
+        console.log(x);
+
+        function addnumbers(a, b){
+            var sum = a + b;
+            return sum;
+        }
+        console.log(addnumbers(3, 3))
+
+        function addArrayElements(array){
+            var arr_sum = 0;
+            var array_length = array.length;
+            for(var i = 0; i < array_length; i++){
+                addnumbers(arr_sum, array[i]);
+            }
+            return arr_sum;
+        }
+        console.log(addArrayElements([4, 6, 8, 12]))
+
+        function letLoop(){
+            for(let i = 0; i < 3; i++){ //notice we use let to define i
+                console.log(i);  //this will log 0, 1, 2
+            }
+            console.log(i);  //this will give us a ReferenceError because i is not defined outside the loop
+        }
+        function varLoop(){
+            for(var i = 0; i < 3; i++){  //notice we use var to define i
+                console.log(i);  //this will log 0, 1, 2
+            }
+            console.log(i); //this will log 3
+        }
+
+        var foo;                  // 'foo' is a declaration, it's global and gets hoisted
+        function magic(){         // 'magic()' also gets hoisted to the top
+            var foo;              // here 'foo' is declared within 'magic()' and gets hoisted to the top of its scope
+            foo = "hello world";  // we assign a value to our function scoped 'foo'
+            console.log(foo);     // we log it as 'hello world'
+        }                       
+        foo = "bar";              // here, we assign a value to the global 'foo'
+        magic();                  // magic is called, the first console.log runs
+        console.log(foo);         // finally we log the global foo
+
+        var magicalUnicorns = function(){
+            console.log("Will it blend?");
+        }
+        console.log("Don't breathe this!");
+        magicalUnicorns();  // do not put this in before setting the actual function because it reads line by line
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
